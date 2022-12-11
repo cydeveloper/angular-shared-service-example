@@ -1,0 +1,35 @@
+<div class="row">
+    <h5>Product Inventory</h5>
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr [formGroup]="form">
+                    <th></th>
+                    <td><input class="form-control" type="text" formControlName="name" /></td>
+                    <td><input class="form-control" type="text" formControlName="description" /></td>
+                    <td><input class="form-control" type="number" formControlName="price" /></td>
+                    <td></td>
+                    <td><button (click)="add(form.value)" class="btn btn-primary">+ Add</button></td>
+                </tr>
+                <tr *ngFor="let product of productsData; let i = index">
+                    <th>{{ product.id }}</th>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.price | currency }}</td>
+                    <td>{{ product.status }}</td>
+                    <td><button (click)="delete(i)" class="btn btn-danger">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

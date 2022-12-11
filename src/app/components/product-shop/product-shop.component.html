@@ -1,0 +1,12 @@
+<div class="row">
+    <h5>Product Shop</h5>
+    <ng-container *ngFor="let product of productsData; let i = index">
+        <div *ngIf="product.status !== statusSold" class="col-md-3">
+            <div class="border p-2">
+                <h6>{{ product.name }}</h6>
+                <p>{{ product.price | currency }}</p>
+                <button (click)="buy(i)" class="btn btn-success">Buy Now</button>
+            </div>
+        </div>
+    </ng-container>
+</div>
