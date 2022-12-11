@@ -65,7 +65,7 @@ Next, I added ProductSharedService to NgModule.providers in AppModule. The Produ
 
 ## Retrieving & Updating The Shared Data
 Once the ngOnInit lifecycle hook is triggered in ProductInventoryComponent & ProductShopComponent, the initial products data is outputted from the subscribe observable and the data is then set to the productsData class property.
-#### product-inventory.component.ts & product-store.component.ts
+#### product-inventory.component.ts & product-shop.component.ts
 ```typescript
     ngOnInit(): void {
         this.productService.productSharedData
